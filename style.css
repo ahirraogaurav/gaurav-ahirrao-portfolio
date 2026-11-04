@@ -142,3 +142,28 @@ footer{text-align:center;color:var(--muted);padding:50px 20px 30px;font-size:.88
 .logo{display:flex;align-items:center}
 .logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;display:block;transition:transform .3s}
 .logo:hover .logo-img{transform:rotate(-8deg) scale(1.08)}
+/* Mobile Contact Form Fix */
+@media (max-width: 760px) {
+    .contact-card {
+        grid-template-columns: 1fr !important;
+        width: 100%;
+    }
+
+    .cform {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        padding: 25px 18px;
+    }
+
+    .cform form {
+        width: 100%;
+    }
+
+    .cform input,
+    .cform textarea,
+    .cform button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
