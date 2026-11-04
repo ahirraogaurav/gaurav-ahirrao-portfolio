@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="images/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ✏️ EDIT: Page title shown in the browser tab -->
+<title>gaurav ahirrao Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<button id="toTop" aria-label="Back to top">↑</button>
+<div class="modal" id="modal" aria-hidden="true"><div class="modal-box" id="modalBox"></div></div>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+  <!-- ✏️ EDIT: your logo is images/logo.png (replace the file to change it) -->
+  <a href="#home" class="logo" aria-label="Home"><img src="images/logo.png" alt="GA logo" class="logo-img">GA. portfolio</a>
+  <button id="menuBtn" aria-label="Menu">☰</button>
+  <div class="links" id="links">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    <button id="themeBtn" aria-label="Toggle dark or light mode">🌙</button>
+  </div>
+</nav>
+
+<!-- ===== 1. HOME ===== -->
+<section id="home">
+  <p class="hello">Hi, my name is</p>
+  <!-- ✏️ EDIT: your name -->
+  <h1>Gaurav Dinesh Ahirrao</h1>
+  <!-- ✏️ EDIT: the rotating titles are in the <script> at the bottom (ROLES) -->
+  <div class="typed" id="typed"></div>
+  <!-- ✏️ EDIT: one-line pitch -->
+  <p class="lead">I build machine learning models and data-driven products that turn raw data into real decisions. Currently looking for an AI/ML Engineer,Python developer or Data Scientist role where I can take models from notebook to production.</p>
+  <div>
+    <a href="#projects" class="btn primary">View my work</a>
+    <!-- ✏️ EDIT: put your resume file name/link here -->
+    <a href="https://drive.google.com/file/d/1avY4sjcM-4yXdKZjvgtuDXsWsKtOPs9P/view?usp=sharing" class="btn ghost">Download resume</a>
+  </div>
+  <!-- ✏️ EDIT: numbers (the counters animate) -->
+  <div class="stats">
+    <div><b data-n="3">0</b><span>Projects built</span></div>
+    <div><b data-n="5">0</b><span>Technologies used</span></div>
+  </div>
+</section>
+
+<!-- ===== 2. ABOUT ME ===== -->
+<div class="divider"><span>✦</span></div>
+<section id="about">
+  <h2>About me</h2>
+  <p class="sub">A little about who I am and how I work.</p>
+  <div class="about">
+    <!-- ✏️ EDIT: put your photo in the images folder and name it me.jpg (the placeholder shows until then) -->
+    <div class="photo"><img src="images/phto.png" onerror="this.onerror=null;this.src='images/me.svg'" alt="Portrait of Aarav Sharma" width="260" height="300"></div>
+    <div>
+      <!-- ✏️ EDIT: write your own story -->
+      <p>I'm an Electronics and Telecommunication Engineering student from Pune with a strong interest in AI, Machine Learning, and Software Development. I enjoy turning ideas into practical projects, working with data, building intelligent applications, and solving real-world problems through technology.</p>
+      <p>I love learning new technologies, exploring AI solutions, and improving my problem-solving skills. I believe in continuous learning and building projects that make a real difference.</p>
+      <div class="facts">
+        <!-- ✏️ EDIT: quick facts -->
+        <span>📍 Pune, India</span><span>🎓 B.E. Electronics and Telecommunication Engineering</span><span>💼 Open to work</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. SKILLS ===== -->
+<div class="divider"><span>✦</span></div>
+<section id="skills">
+  <h2>Skills</h2>
+  <p class="sub">Tools I use to build things. The bar shows how comfortable I am.</p>
+  <!-- ✏️ EDIT: filter buttons. data-f must match data-cat on the cards -->
+  <div class="filters"><button class="on" data-f="all">All</button><button data-f="ml">ML &amp; AI</button><button data-f="data">Data</button><button data-f="tools">Tools</button><button data-f="backend">Backend</button><button data-f="web">Web</button></div>
+  <!-- ✏️ EDIT: each card is one skill. Change data-level (0-100), icon, title and text. Copy a card to add more. -->
+  <div class="grid">
+    <div class="card" data-cat="data"><div class="ico">🐍</div><h3>Python</h3><p>Clean, tested code for data and ML work.</p><div class="bar"><i data-level="90"></i></div><small class="pct">90%</small></div>
+    <div class="card" data-cat="web"><div class="ico">🌐</div><h3>HTML</h3><p>Clean, semantic structure for accessible and well-organized web pages.</p><div class="bar"><i data-level="90"></i></div><small class="pct">90%</small></div>
+    <div class="card" data-cat="web"><div class="ico">🎨</div><h3>CSS</h3><p>Modern, responsive styling for attractive and user-friendly interfaces.</p><div class="bar"><i data-level="90"></i></div><small class="pct">70%</small></div>
+    <div class="card" data-cat="web"><div class="ico">⚡</div><h3>JavaScript</h3><p>Interactive, dynamic functionality for smooth user experiences</p><div class="bar"><i data-level="90"></i></div><small class="pct">50%</small></div>
+    <div class="card" data-cat="ml"><div class="ico">🤖</div><h3>Machine Learning</h3><p>scikit-learn, XGBoost, model tuning and evaluation.</p><div class="bar"><i data-level="85"></i></div><small class="pct">85%</small></div>
+    <div class="card" data-cat="ml"><div class="ico">🧠</div><h3>Deep Learning</h3><p>TensorFlow and PyTorch, CNNs and transformers.</p><div class="bar"><i data-level="78"></i></div><small class="pct">78%</small></div>
+    <div class="card" data-cat="ml"><div class="ico">💬</div><h3>NLP</h3><p>Text classification, embeddings, LLM apps.</p><div class="bar"><i data-level="72"></i></div><small class="pct">72%</small></div>
+    <div class="card" data-cat="data"><div class="ico">🗄️</div><h3>SQL &amp; Databases</h3><p>Complex queries, joins, PostgreSQL, MongoDB.</p><div class="bar"><i data-level="82"></i></div><small class="pct">82%</small></div>
+    <div class="card" data-cat="data"><div class="ico">🧮</div><h3>Pandas &amp; NumPy</h3><p>Cleaning, feature engineering, analysis.</p><div class="bar"><i data-level="88"></i></div><small class="pct">88%</small></div>
+    <div class="card" data-cat="data"><div class="ico">📊</div><h3>Data Visualization</h3><p>Matplotlib, Seaborn, Plotly, Power BI.</p><div class="bar"><i data-level="80"></i></div><small class="pct">80%</small></div>
+    <div class="card" data-cat="tools"><div class="ico">🔀</div><h3>Git &amp; Deployment</h3><p>GitHub, Docker basics, Streamlit, FastAPI.</p><div class="bar"><i data-level="80"></i></div><small class="pct">80%</small></div>
+    <div class="card" data-cat="backend"><div class="ico">🌿</div><h3>Django</h3><p>Web apps, REST APIs, ORM and authentication.</p><div class="bar"><i data-level="75"></i></div><small class="pct">75%</small></div>
+    <div class="card" data-cat="backend"><div class="ico">⚡</div><h3>FastAPI</h3><p>Fast APIs to serve ML models, with validation and docs.</p><div class="bar"><i data-level="80"></i></div><small class="pct">80%</small></div>
+    <div class="card" data-cat="ml"><div class="ico">✨</div><h3>GenAI</h3><p>Generative AI apps, RAG with vector databases, chatbots.</p><div class="bar"><i data-level="72"></i></div><small class="pct">72%</small></div>
+    <div class="card" data-cat="ml"><div class="ico">🔌</div><h3>LLM APIs</h3><p>Claude, OpenAI and Hugging Face APIs, streaming, tool use.</p><div class="bar"><i data-level="78"></i></div><small class="pct">78%</small></div>
+    <div class="card" data-cat="ml"><div class="ico">📝</div><h3>Prompt Engineering</h3><p>Clear prompts, few-shot examples, structured outputs, evaluation.</p><div class="bar"><i data-level="85"></i></div><small class="pct">85%</small></div>
+  </div>
+</section>
+
+<!-- ===== 4. PROJECTS ===== -->
+<div class="divider"><span>✦</span></div>
+<section id="projects">
+  <h2>Project work</h2>
+  <p class="sub">A few things I've built. Use the filters to explore.</p>
+  <!-- ✏️ EDIT: filter buttons. data-f must match the data-cat of the cards below -->
+  <div class="filters">
+    <button class="on" data-f="all">All</button><button data-f="web">Web</button><button data-f="api">Backend</button><button data-f="ai">Python / AI</button>
+  </div>
+  <!-- ✏️ EDIT: each card is one project. Change title, text, tags, and the Live / Code links -->
+  <div class="grid" id="projGrid">
+    <div class="card proj" data-cat="api">
+      <img class="thumb" src="images/LLM.png" alt="LLM-as-a-judge" loading="lazy">
+      <div class="body"><h3>⚖️ LLM-as-judge</h3><p>AI-powered evaluation system that compares LLM responses, scores accuracy and relevance, and selects the best answer.</p>
+        <div class="tags"><span>Python</span><span>ollama</span><span>Groq-api</span><span>LLMs</span></div>
+        <button class="btn mini" data-open>View details</button>
+        <div class="more" hidden><p>Built an AI-powered evaluation system that compares LLM responses, scores accuracy and relevance, and selects the best response using automated judging.</p><ul><li>AI response search with evaluation filters for accuracy, relevance, helpfulness, and quality.</li><li>Automated scoring system with detailed feedback, performance metrics, and side-by-side LLM response comparison.</li><li>Responsive AI evaluation dashboard optimized for desktop, tablet, and mobile devices.</li></ul>
+          <div class="row"><a class="btn primary" href="https://github.com/ahirraogaurav/llm-judge-audit.git" target="_blank">Source code</a></div></div>
+      </div></div>
+    <div class="card proj" data-cat="web ai">
+      <img class="thumb" src="images/MultiagentAI.png" alt="MultiagentAI" loading="lazy">
+      <div class="body"><h3>🤖 MultiagentAI</h3><p>Multi-Agent AI Research Assistant with automated web research, AI analysis, and report generation.</p>
+        <div class="tags"><span>Python</span><span>API</span><span>CSS</span> <span>HTML</span><span>Django</span><span>Javascript</span><span>AI</span></div>
+        <button class="btn mini" data-open>View details</button>
+        <div class="more" hidden><p>An AI-powered research assistant that uses multiple agents to search the web, extract information, analyze content, and create detailed research reports.</p><ul><li>Multi-agent AI collaboration</li><li>Real-time web search</li><li>AI-powered content analysis</li></ul>
+          <div class="row"><a class="btn primary" href="https://multiagentai-k3xe.onrender.com" target="_blank">Live demo</a><a class="btn ghost" href="https://github.com/ahirraogaurav/MultiagentAi.git" target="_blank">Source code</a></div></div>
+      </div></div>
+    <div class="card proj" data-cat="web ai">
+      <img class="thumb" src="images/kisansense.png" alt="KrishiSense" loading="lazy">
+      <div class="body"><h3>🌱 KrishiSense</h3><p>KrishiSense with AI-powered crop recommendation, plant disease detection, and fertilizer guidance.</p>
+        <div class="tags"><span>Python</span><span>ML</span><span>MySQL</span><span>NumPy</span><span>Pandas</span><span>Django</span><span>TensorFlow</span></div>
+        <button class="btn mini" data-open>View details</button>
+        <div class="more" hidden><p>A smart agriculture web application that uses machine learning to recommend suitable crops based on soil nutrients and weather conditions. It also helps users identify plant diseases and get crop-specific farming guidance.</p><ul><li>ML-based crop recommendation</li><li>Soil nutrient analysis (NPK and pH)</li><li>Temperature, humidity, and rainfall analysis</li></ul>
+          <div class="row"><a class="btn primary" href="https://krishisense-dxe8.onrender.com" target="_blank">Live demo</a><a class="btn ghost" href="https://github.com/ahirraogaurav/KrishiSense.git" target="_blank">Source code</a></div></div>
+      </div></div>
+    <div class="card proj" data-cat="web ai" data-cat2="ai">
+      <img class="thumb" src="images/hdd.png" alt="Heart Disease Detection System" loading="lazy">
+      <div class="body"><h3>❤️ Heart Disease Detection System</h3><p>ML-Based Heart Disease Detection System with machine learning-based heart disease risk prediction and health analysis.</p>
+        <div class="tags"><span>Python</span><span>FastAPI</span><span>Docker</span><span>seaborn</span><span>matplotlib</span></div>
+        <button class="btn mini" data-open>View details</button>
+        <div class="more" hidden><p>A web-based healthcare application that analyzes patient health details and predicts the risk of heart disease using a trained machine learning model.</p><ul><li>Heart disease risk prediction</li><li>Machine learning-based classification</li><li>User-friendly web interface</li></ul>
+          <div class="row"><a class="btn primary" href="#" target="_blank">Live demo</a><a class="btn ghost" href="#" target="_blank">Source code</a></div></div>
+      </div></div>
+    <div class="card proj" data-cat="web" >
+      <img class="thumb" src="images/logo.png" alt="StockLens preview" loading="lazy">
+      <div class="body"><h3>👨‍💻 portfolio</h3><p>Personal Portfolio Website showcasing my skills, projects, education, and professional experience.</p>
+        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <button class="btn mini" data-open>View details</button>
+        <div class="more" hidden><p>A responsive personal portfolio website designed to present my technical skills, development projects, certifications, and achievements in a clean and professional way.</p><ul><li>Technical skills showcase</li><li>Contact form and social media links</li><li>Resume download option</li></ul>
+          <div class="row"><a class="btn primary" href="#" target="_blank">Live demo</a><a class="btn ghost" href="#" target="_blank">Source code</a></div></div>
+      </div></div>
+    
+  </div>
+</section>
+
+<!-- ===== 5. CONTACT ===== -->
+<div class="divider"><span>✦</span></div>
+<section id="contact">
+  <h2>Contact me</h2>
+  <p class="sub">Have a role or project in mind? Send me a message.</p>
+  <div class="contact-card">
+    <!-- ✏️ EDIT: your real contact details (the Copy buttons copy data-copy) -->
+    <div class="cinfo">
+      <h3>Let's talk</h3>
+      <p class="avail"><i class="dot"></i> Available for new roles</p>
+      <div class="crow"><span>📧 ahirraogaurav50@gmail.com</span><button class="copy" data-copy="aarav@example.com">Copy</button></div>
+      <div class="crow"><span>📞 +91 7028071298</span><button class="copy" data-copy="+910000000000">Copy</button></div>
+      <div class="crow"><span>📍 Pune, India</span></div>
+      <div class="social"><a href="https://www.linkedin.com/in/gauravahirrao2027/" target="_blank">LinkedIn</a><a href="https://github.com/ahirraogaurav" target="_blank">GitHub</a></div>
+    </div>
+    <form id="form" class="cform">
+      <input id="fn" name="name" placeholder="Your name" maxlength="100" required>
+      <input id="fe" name="email" type="email" placeholder="Your email" required>
+      <textarea id="fm" name="message" rows="5" maxlength="2000" placeholder="Your message" required></textarea>
+      <input id="hp" name="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+      <button class="btn primary" type="submit">Send message</button>
+      <div id="note" role="status"></div>
+    </form>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Gaurav Ahirrao. Built with HTML, CSS and JavaScript.</footer> <!-- ✏️ EDIT: name -->
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>

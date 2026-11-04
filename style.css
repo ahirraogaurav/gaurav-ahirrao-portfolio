@@ -1,0 +1,144 @@
+/* ===== THEME COLORS (edit these to change the whole look) ===== */
+:root{
+  --bg:#f6f7fb; --surface:#ffffff; --text:#14172b; --muted:#5d6280;
+  --accent:#4f46e5;   /* main color: buttons, links */
+  --accent2:#0ea5a4;  /* secondary color: highlights */
+  --border:#e1e4f0; --shadow:0 10px 30px rgba(30,30,80,.08);
+}
+[data-theme="dark"]{
+  --bg:#0d1020; --surface:#161a30; --text:#eceefb; --muted:#9aa0c4;
+  --accent:#8b8cff; --accent2:#2dd4bf; --border:#262b4a; --shadow:0 10px 30px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;transition:background .3s,color .3s}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15}
+a{color:inherit;text-decoration:none}
+section{max-width:1060px;margin:auto;padding:90px 24px 40px}
+h2{font-size:2.1rem;margin-bottom:8px}
+h2::after{content:"";display:block;width:64px;height:4px;border-radius:4px;margin-top:10px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.sub{color:var(--muted);margin-bottom:36px;max-width:560px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* ===== NAVBAR ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.logo{font-family:Fraunces,serif;font-weight:800;font-size:1.25rem}
+.links{display:flex;gap:22px;align-items:center}
+.links a{font-size:.95rem;color:var(--muted);transition:color .2s}
+.links a:hover,.links a.active{color:var(--accent)}
+#themeBtn{border:1px solid var(--border);background:var(--surface);color:var(--text);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.1rem}
+#menuBtn{display:none;background:none;border:0;color:var(--text);font-size:1.6rem;cursor:pointer}
+
+/* ===== HOME / HERO ===== */
+#home{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:110px}
+.hello{color:var(--accent2);font-weight:600;margin-bottom:10px}
+#home h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;letter-spacing:-.02em}
+.typed{font-family:Fraunces,serif;font-size:clamp(1.3rem,3vw,2rem);margin:18px 0;color:var(--accent);min-height:2.4rem}
+.typed::after{content:"|";animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{max-width:540px;color:var(--muted);margin-bottom:30px}
+.btn{display:inline-block;padding:13px 26px;border-radius:10px;font-weight:600;border:2px solid var(--accent);cursor:pointer;transition:transform .2s,background .2s;font:inherit;font-weight:600}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{color:var(--accent);background:transparent;margin-left:10px}
+.btn:hover{transform:translateY(-3px)}
+.stats{display:flex;gap:40px;margin-top:50px;flex-wrap:wrap}
+.stats b{font-family:Fraunces,serif;font-size:2rem;display:block}
+.stats span{color:var(--muted);font-size:.9rem}
+
+/* ===== ABOUT ===== */
+.about{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:center}
+.avatar{width:260px;height:260px;border-radius:30% 70% 60% 40%/40% 40% 60% 60%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-family:Fraunces,serif;font-size:5rem;color:#fff;box-shadow:var(--shadow)}
+.about p{color:var(--muted);margin-bottom:14px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.facts span{background:var(--surface);border:1px solid var(--border);padding:6px 14px;border-radius:20px;font-size:.88rem}
+
+/* ===== CARDS (skills + projects) ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;box-shadow:var(--shadow);transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--accent)}
+.card .ico{font-size:1.8rem;margin-bottom:8px}
+.card h3{font-size:1.2rem;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.93rem}
+.bar{height:7px;background:var(--border);border-radius:5px;margin-top:14px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:5px;transition:width 1.2s ease}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.tags span{font-size:.78rem;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);padding:3px 10px;border-radius:12px}
+.card .row{display:flex;gap:16px;font-weight:600;font-size:.9rem}
+.card .row a{color:var(--accent)}
+.card .row a:hover{text-decoration:underline}
+.filters{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+.filters button{border:1px solid var(--border);background:var(--surface);color:var(--text);padding:8px 18px;border-radius:20px;cursor:pointer;font:inherit;font-size:.9rem}
+.filters button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* ===== CONTACT ===== */
+.contact{display:grid;grid-template-columns:1fr 1.3fr;gap:36px}
+.contact ul{list-style:none;color:var(--muted)}
+.contact li{margin-bottom:14px}
+.contact li a:hover{color:var(--accent)}
+form{display:grid;gap:14px}
+input,textarea{width:100%;padding:13px 15px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+#note{color:var(--accent2);font-weight:600;min-height:1.4rem}
+footer{text-align:center;color:var(--muted);padding:50px 20px 30px;font-size:.88rem}
+
+@media(max-width:760px){
+  #menuBtn{display:block}
+  .links{position:fixed;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);padding:20px;border-bottom:1px solid var(--border);display:none}
+  .links.open{display:flex}
+  .about,.contact-card{grid-template-columns:1fr}
+  .photo{max-width:220px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ===== SECTION DIVIDERS ===== */
+.divider{max-width:1060px;margin:50px auto 0;padding:0 24px;display:flex;align-items:center;gap:16px;color:var(--accent)}
+.divider::before,.divider::after{content:"";flex:1;height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.45}
+/* ===== PROGRESS BAR + BACK TO TOP ===== */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:20;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+#toTop{position:fixed;right:20px;bottom:20px;z-index:15;width:46px;height:46px;border-radius:50%;border:0;background:var(--accent);color:#fff;font-size:1.3rem;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .3s}
+#toTop.show{opacity:1;pointer-events:auto}
+/* ===== ABOUT PHOTO ===== */
+.photo{position:relative;width:260px}
+.photo::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:3px solid var(--accent);border-radius:26px;transition:inset .3s}
+.photo:hover::before{inset:6px -6px -6px 6px}
+.photo img{position:relative;width:100%;height:auto;aspect-ratio:260/300;object-fit:cover;border-radius:24px;display:block;box-shadow:var(--shadow)}
+/* ===== SKILL EXTRAS ===== */
+.pct{display:block;text-align:right;color:var(--muted);margin-top:4px;font-size:.78rem}
+/* ===== PROJECT CARDS WITH IMAGES ===== */
+.card.proj{padding:0;overflow:hidden}
+.proj .thumb{width:100%;height:170px;object-fit:cover;display:block;transition:transform .5s}
+.proj:hover .thumb{transform:scale(1.07)}
+.proj .body{padding:20px 22px 22px}
+.thumbwrap{overflow:hidden}
+.btn.mini{padding:8px 16px;font-size:.88rem;background:transparent;color:var(--accent)}
+.btn.mini:hover{background:var(--accent);color:#fff}
+/* ===== MODAL ===== */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(5,8,25,.65);display:none;place-items:center;padding:20px;backdrop-filter:blur(4px)}
+.modal.open{display:grid}
+.modal-box{background:var(--surface);color:var(--text);border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.5);animation:pop .25s ease}
+@keyframes pop{from{transform:scale(.92);opacity:0}}
+.modal-box img{width:100%;height:230px;object-fit:cover;display:block}
+.modal-box .in{padding:24px 28px 28px}
+.modal-box ul{margin:12px 0 18px 20px;color:var(--muted)}
+.modal-box .row{display:flex;gap:10px;flex-wrap:wrap}
+.modal-box .btn.ghost{margin-left:0}
+.mclose{float:right;border:0;background:var(--bg);color:var(--text);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem}
+/* ===== CONTACT CARD ===== */
+.contact-card{display:grid;grid-template-columns:1fr 1.35fr;border-radius:24px;overflow:hidden;border:1px solid var(--border);background:var(--surface);box-shadow:var(--shadow)}
+.cinfo{padding:38px 32px;color:#fff;background:linear-gradient(150deg,var(--accent),var(--accent2) 130%)}
+.cinfo h3{font-size:1.7rem;margin-bottom:10px}
+.avail{display:flex;align-items:center;gap:8px;margin-bottom:24px;font-weight:500}
+.dot{width:10px;height:10px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 #4ade80;animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px transparent}}
+.crow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.25);font-size:.95rem}
+.copy{border:1px solid rgba(255,255,255,.7);background:transparent;color:#fff;border-radius:8px;padding:4px 12px;cursor:pointer;font-size:.8rem}
+.copy:hover{background:#fff;color:#14172b}
+.social{display:flex;gap:10px;margin-top:24px}
+.social a{background:rgba(255,255,255,.2);padding:8px 16px;border-radius:20px;font-weight:600;font-size:.9rem;transition:background .2s}
+.social a:hover{background:#fff;color:#14172b}
+.cform{padding:36px 32px;position:relative}
+
+/* ===== NAVBAR LOGO ===== */
+.logo{display:flex;align-items:center}
+.logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;display:block;transition:transform .3s}
+.logo:hover .logo-img{transform:rotate(-8deg) scale(1.08)}

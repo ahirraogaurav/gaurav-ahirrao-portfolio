@@ -1,0 +1,14 @@
+# Pings your database twice a week so the free Supabase project does not pause from inactivity.
+# Needs 2 repo secrets: SUPABASE_URL and SUPABASE_KEY (Settings > Secrets and variables > Actions)
+name: keep-database-awake
+on:
+  schedule:
+    - cron: "0 6 * * 1,4"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -sf -X POST "${{ secrets.SUPABASE_URL }}/rest/v1/rpc/ping" \
+            -H "apikey: ${{ secrets.SUPABASE_KEY }}" -H "Content-Type: application/json" -d '{}'
